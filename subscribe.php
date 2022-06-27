@@ -10,7 +10,7 @@ if (isset($_POST['email_address']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
         $postData = array(
             "email_address" => $_POST['email_address'],
             "status" => "subscribed",
-            "tags" => array("Celebrity")
+            "tags" => array("Subscriber")
         );
 
         // Setup cURL
