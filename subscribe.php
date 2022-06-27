@@ -3,8 +3,8 @@ if (isset($_POST['email_address']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
     
     try {
         // API to mailchimp
-        $list_id = 'b0d1082743';
-        $authToken = 'af264fb16b9220ae70f5907cf6b2d2d9-us12';
+        $list_id = '';
+        $authToken = '';
         // The data to send to the API
 
         $postData = array(
