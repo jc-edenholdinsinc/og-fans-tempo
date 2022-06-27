@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OG Fans - Be An OG Fan </title>
+    <title>Be An OG FAN</title>
     <link rel="icon" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         body {
+            margin: 4px;
             background-color: #171717;
         }
+
+	    .loader { display: none; }
+
         .content-wrapper {
             text-align: center;
             position:absolute;
@@ -23,19 +30,77 @@
         .content-wrapper img {
             width: 300px;
             height: auto;
+            margin: 0 auto 4px auto;
         }
         .content-wrapper p {
             color: #ccc;
             font-weight: bold;
-            font-family: Calibri;
+            font-family: 'Roboto';
+        }
+
+        .subscription-wrapper {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .waitlist-label {
+            font-size: 18px;
+            color: #fff !important;
+        }
+
+        #waitlist-subscribe {
+            font-weight: bold;
+            border: solid 1px #f3ab33;
+            color: #f3ab33 !important;
+            margin-top: 6px;
+        }
+
+        #waitlist-subscribe:hover {
+            background-color: #f3ab33;
+            color: #000 !important;            
+        }
+
+        .joinField { text-align: center; }
+
+        .joinResult {
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            padding-top: 4px;
+        }
+
+        @media only screen and (max-width: 420px) {
+            .waitlist-label {
+                width: 80%;
+                margin: 0 auto;
+            }            
+            .input-group {
+                width: 80% !important;
+                margin: 0 auto !important;
+            }
         }
     </style>
 </head>
 <body>
     <div class="content-wrapper">
-        <img src="images/og-fans-logo.png" title="Be An OG Fan"/>
-        <img src="images/breeder_dao_edited.gif" title="Be An OG Fan"/>
+        <a href="/"><img src="images/og-fans-logo.png" title="Be An OG Fan"/></a>
+        
+        <p class="waitlist-label">
+            The best way for celebrities and fans to
+            connect using NFTs.</p>
+        <!-- <p>Join the waitlist by entering your email address below.</p> -->
+        <form autocomplete="off">
+            <div class="input-group">
+                <input type="email" name="email" class="form-control joinField" placeholder="Join the waitlist by entering your email address" required>
+                <button class="btn btn-outline-secondary btn-block" type="submit" id="waitlist-subscribe"><span class="fas fa-circle-notch fa-spin loader"></span> JOIN NOW!</button>            
+            </div>            
+        </form>
+        <div class="joinResult"></div>
+        <hr>
         <p>© 2022. All rights reserved</p>
-    </div>    
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
 </html>
